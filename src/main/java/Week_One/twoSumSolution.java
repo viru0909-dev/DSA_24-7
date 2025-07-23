@@ -12,6 +12,7 @@ class twoSumSolution {
                 }
             }
         }
+        //if there is no solution then return nothing.
         return new int[]{};
     }
 
