@@ -15,6 +15,9 @@ public class LinkedList {
         }
     }
 
+    public LinkedList() {
+    }
+
     public LinkedList(int value){
         Node newNode = new Node(value);
         head = newNode;
@@ -25,7 +28,7 @@ public class LinkedList {
     public void printList(){
         Node temp = head;
         while(temp != null){
-            System.out.println(temp.value);
+            System.out.print(temp.value+" -> ");
             temp = temp.next;
         }
     }
@@ -40,5 +43,18 @@ public class LinkedList {
         System.out.println("Length: "+length);
     }
 
+
+    //Append the node at end of list.
+    public void append(int value){
+        Node newNode = new Node(value);
+        if(length == 0){
+            head = newNode;
+            tail = newNode;
+        }else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
 
 }
