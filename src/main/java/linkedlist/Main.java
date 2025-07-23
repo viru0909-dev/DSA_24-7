@@ -7,6 +7,7 @@ public class Main {
         ll.append(7);
 
         ll.set(1,8);
+        ll.insert(1,7);
 
         ll.printList();
     }
