@@ -33,6 +33,9 @@ public class LinkedList {
             System.out.print(temp.value+" -> ");
             temp = temp.next;
         }
+        if(tail.next == null){
+            System.out.print("null");
+        }
     }
 
     public void getHead(){
@@ -144,5 +147,39 @@ public class LinkedList {
         length++;
         return true;
 
+    }
+
+    //remove Node by it's index
+    public Node remove(int index){
+        if (index < 0 || index >= length){
+            return null;
+        }
+
+        if(index == 0) return removeFirst();
+        if (index == length -1) return removeLast();
+
+        Node temp = get(index);
+        Node pre = get(index -1 );
+
+        pre.next = temp.next;
+        temp.next = null;
+        length--;
+        return null;
+    }
+
+    //reversing linked list
+    public void reverse(){
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
     }
 }
